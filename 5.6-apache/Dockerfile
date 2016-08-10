@@ -1,5 +1,6 @@
 FROM php:5.6-apache
 
+# Compile Phalcon
 RUN set -xe && \
         curl -LO https://github.com/phalcon/cphalcon/archive/v3.0.0.tar.gz && \
         tar xzf v3.0.0.tar.gz && cd cphalcon-3.0.0/build && ./install && \
