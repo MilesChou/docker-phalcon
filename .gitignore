@@ -1,0 +1,26 @@
+# Global/Temp.gitignore
+*~
+*.swp
+
+# Global/OSX.gitignore
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Global/Windows.gitignore
+Thumbs.db
+Desktop.ini
+
+# IntelliJ IDEA project files
+.idea
+*.iml
+
+# Eclipse project files
+.project
+.buildpath
+.settings
