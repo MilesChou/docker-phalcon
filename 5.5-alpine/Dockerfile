@@ -1,4 +1,5 @@
 FROM php:5.5-alpine
+MAINTAINER MilesChou <jangconan@gmail.com>
 
 # Install require packages
 RUN apk add --no-cache \

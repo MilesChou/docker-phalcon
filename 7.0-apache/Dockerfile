@@ -1,4 +1,5 @@
 FROM php:7.0-apache
+MAINTAINER MilesChou <jangconan@gmail.com>
 
 # Compile Phalcon
 RUN set -xe && \
