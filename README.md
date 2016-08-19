@@ -1,9 +1,6 @@
 # Docker Phalcon
 
-[![](https://images.microbadger.com/badges/version/mileschou/phalcon.svg)](http://microbadger.com/images/mileschou/phalcon "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/mileschou/phalcon.svg)](http://microbadger.com/images/mileschou/phalcon "Get your own image badge on microbadger.com")
-[![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
-[![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
+[![](https://images.microbadger.com/badges/version/mileschou/phalcon.svg)](http://microbadger.com/images/mileschou/phalcon "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/mileschou/phalcon.svg)](http://microbadger.com/images/mileschou/phalcon "Get your own image badge on microbadger.com") [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/) [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 
 Docker Phalcon base image, see https://hub.docker.com/r/mileschou/phalcon/
 
