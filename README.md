@@ -1,5 +1,7 @@
 # Docker Phalcon
 
+[![](https://images.microbadger.com/badges/version/mileschou/phalcon.svg)](http://microbadger.com/images/mileschou/phalcon "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/mileschou/phalcon.svg)](http://microbadger.com/images/mileschou/phalcon "Get your own image badge on microbadger.com")
 [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 
@@ -28,3 +30,10 @@ Here is a simple test command that can confirm the extension is loaded.
 
     $ docker run -i -t --rm mileschou/phalcon php -m | grep phalcon
     phalcon
+
+## Thanks
+
+* [GitHub](https://github.com/)
+* [Docker Hub](https://hub.docker.com/)
+* [Shields.io](https://img.shields.io/) provide docker hub stars and pulls badge
+* [MicroBadger](https://microbadger.com/) provide image size and version badge
