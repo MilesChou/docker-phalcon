@@ -23,10 +23,29 @@ The repository is a Docker image based on [Docker official PHP image](https://hu
 
 ## Image Test
 
-Here is a simple test command that can confirm the extension is loaded.
+Here is a simple test command that can confirm the extension has been loaded.
 
     $ docker run -i -t --rm mileschou/phalcon php -m | grep phalcon
     phalcon
+
+## Phalcon Devtools CLI
+
+The repository also include [Phalcon Devtools](https://github.com/phalcon/phalcon-devtools). Here is a simple command.
+
+    $ docker run -i -t --rm mileschou/phalcon phalcon
+
+    Phalcon DevTools (3.0.0)
+
+    Available commands:
+      commands         (alias of: list, enumerate)
+      controller       (alias of: create-controller)
+      module           (alias of: create-module)
+      model            (alias of: create-model)
+      all-models       (alias of: create-all-models)
+      project          (alias of: create-project)
+      scaffold         (alias of: create-scaffold)
+      migration        (alias of: create-migration)
+      webtools         (alias of: create-webtools)
 
 ## Thanks
 
