@@ -47,6 +47,10 @@ The repository also include [Phalcon Devtools](https://github.com/phalcon/phalco
       migration        (alias of: create-migration)
       webtools         (alias of: create-webtools)
 
+## Build yourself
+
+Recommend 2G+ RAM when build image yourself. Maybe wait a long time for compile if only 1G RAM.
+
 ## Thanks
 
 * [GitHub](https://github.com/)
