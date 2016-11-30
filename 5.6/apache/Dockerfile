@@ -1,7 +1,7 @@
 FROM php:5.6-apache
 MAINTAINER MilesChou <jangconan@gmail.com>
 
-ENV PHALCON_VERSION=3.0.1
+ENV PHALCON_VERSION=3.0.2
 
 # Compile Phalcon
 RUN set -xe && \
