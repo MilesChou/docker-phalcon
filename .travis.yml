@@ -2,10 +2,10 @@ language: bash
 services: docker
 
 env:
-  - VERSION=7.1 VARIANT=
-  - VERSION=7.1 VARIANT=alpine
-  - VERSION=7.1 VARIANT=apache
-  - VERSION=7.1 VARIANT=fpm
+  - VERSION=7.1 VARIANT= EXTRA_TAG=latest
+  - VERSION=7.1 VARIANT=alpine EXTRA_TAG=alpine
+  - VERSION=7.1 VARIANT=apache EXTRA_TAG=apache
+  - VERSION=7.1 VARIANT=fpm EXTRA_TAG=fpm
   - VERSION=7.0 VARIANT=
   - VERSION=7.0 VARIANT=alpine
   - VERSION=7.0 VARIANT=apache
@@ -21,11 +21,15 @@ env:
 
 before_script:
   - cd "$VERSION"
-  - IMAGE="mileschou/phalcon:${VERSION}-${VARIANT:+-$VARIANT}"
-  - IMAGE="${IMAGE//'/'/-}"
+  - IMAGE="mileschou/phalcon"
+  - IMAGE_VERSION="${VERSION}${VARIANT:+-$VARIANT}"
+  - IMAGE_VERSION="${IMAGE_VERSION//'/'/-}"
+  - IMAGE_NAME="$IMAGE:$IMAGE_VERSION"
+  - echo "$IMAGE_NAME"
 
 script:
-  - docker build -t "$IMAGE" "${VARIANT:-.}"
-
-after_script:
+  - docker build -t "$IMAGE_NAME" "${VARIANT:-.}"
+  - if [ "$EXTRA_TAG" != "" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$EXTRA_TAG" ; fi
   - docker images
+  - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
+  - docker push $IMAGE
