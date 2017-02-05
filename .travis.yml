@@ -2,19 +2,19 @@ language: bash
 services: docker
 
 env:
-  - VERSION=7.1 VARIANT= EXTRA_TAG=latest
+  - VERSION=7.1 VARIANT= EXTRA_TAG=latest CLI_TAG=7.1-cli
   - VERSION=7.1 VARIANT=alpine EXTRA_TAG=alpine
   - VERSION=7.1 VARIANT=apache EXTRA_TAG=apache
   - VERSION=7.1 VARIANT=fpm EXTRA_TAG=fpm
-  - VERSION=7.0 VARIANT=
+  - VERSION=7.0 VARIANT= CLI_TAG=7.0-cli
   - VERSION=7.0 VARIANT=alpine
   - VERSION=7.0 VARIANT=apache
   - VERSION=7.0 VARIANT=fpm
-  - VERSION=5.6 VARIANT=
+  - VERSION=5.6 VARIANT= CLI_TAG=5.6-cli
   - VERSION=5.6 VARIANT=alpine
   - VERSION=5.6 VARIANT=apache
   - VERSION=5.6 VARIANT=fpm
-  - VERSION=5.5 VARIANT=
+  - VERSION=5.5 VARIANT= CLI_TAG=5.5-cli
   - VERSION=5.5 VARIANT=alpine
   - VERSION=5.5 VARIANT=apache
   - VERSION=5.5 VARIANT=fpm
@@ -30,6 +30,7 @@ before_script:
 script:
   - docker build -t "$IMAGE_NAME" "${VARIANT:-.}"
   - if [ "$EXTRA_TAG" != "" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$EXTRA_TAG" ; fi
+  - if [ "$CLI_TAG" != "" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$CLI_TAG" ; fi
   - docker images
   - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
   - docker push $IMAGE
