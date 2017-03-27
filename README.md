@@ -1,10 +1,10 @@
 # Docker Phalcon
 
-![Phalcon Version](https://img.shields.io/badge/Phalcon-3.0.4-blue.svg) [![Build Status](https://travis-ci.org/MilesChou/docker-phalcon.svg?branch=master)](https://travis-ci.org/MilesChou/docker-phalcon) [![](https://images.microbadger.com/badges/version/mileschou/phalcon:alpine.svg)](http://microbadger.com/images/mileschou/phalcon:alpine "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/mileschou/phalcon:alpine.svg)](http://microbadger.com/images/mileschou/phalcon:alpine "Get your own image badge on microbadger.com") [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/) [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
+![Phalcon Version](https://img.shields.io/badge/Phalcon-3.1.0-blue.svg) [![Build Status](https://travis-ci.org/MilesChou/docker-phalcon.svg?branch=master)](https://travis-ci.org/MilesChou/docker-phalcon) [![](https://images.microbadger.com/badges/version/mileschou/phalcon:alpine.svg)](http://microbadger.com/images/mileschou/phalcon:alpine "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/mileschou/phalcon:alpine.svg)](http://microbadger.com/images/mileschou/phalcon:alpine "Get your own image badge on microbadger.com") [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/) [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 
 Docker Phalcon base image, see https://hub.docker.com/r/mileschou/phalcon/
 
-The repository is a Docker image based on [Docker official PHP image](https://hub.docker.com/_/php/) with [Phalcon Framework](https://phalconphp.com/) Version 3.0+.
+The repository is a Docker image based on [Docker official PHP image](https://hub.docker.com/_/php/) with [Phalcon Framework](https://phalconphp.com/) Version 3.1+.
 
 ## Supported tags and respective `Dockerfile` links
 
