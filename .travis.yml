@@ -32,5 +32,6 @@ script:
   - if [ "$EXTRA_TAG" != "" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$EXTRA_TAG" ; fi
   - if [ "$CLI_TAG" != "" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$CLI_TAG" ; fi
   - docker images
+  - docker run -i -t --rm $IMAGE_NAME php -m
   - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
   - docker push $IMAGE
