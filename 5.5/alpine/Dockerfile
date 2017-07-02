@@ -9,7 +9,7 @@ RUN set -xe && \
         apk add --no-cache --virtual .build-deps autoconf g++ make && \
         curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
         tar xzf v${PHALCON_VERSION}.tar.gz && cd cphalcon-${PHALCON_VERSION}/build && sh install && \
-        echo "extension=phalcon.so" > /usr/local/etc/php/conf.d/phalcon.ini && \
+        docker-php-ext-enable phalcon && \
         cd ../.. && rm -rf v${PHALCON_VERSION}.tar.gz cphalcon-${PHALCON_VERSION} && \
         apk del .build-deps && \
         # Insall Phalcon Devtools, see https://github.com/phalcon/phalcon-devtools/
