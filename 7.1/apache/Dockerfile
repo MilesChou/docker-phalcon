@@ -1,7 +1,7 @@
 FROM php:7.1-apache
 LABEL maintainer MilesChou <jangconan@gmail.com>
 
-ENV PHALCON_VERSION=3.2.0
+ENV PHALCON_VERSION=3.2.1
 
 # Compile Phalcon
 RUN set -xe && \
