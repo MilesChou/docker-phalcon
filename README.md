@@ -43,9 +43,10 @@ The repository also include [Phalcon Devtools](https://github.com/phalcon/phalco
 
     $ docker run -i -t --rm mileschou/phalcon phalcon
 
-    Phalcon DevTools (3.0.0)
+    Phalcon DevTools (3.2.0)
 
     Available commands:
+      info             (alias of: i)
       commands         (alias of: list, enumerate)
       controller       (alias of: create-controller)
       module           (alias of: create-module)
@@ -55,6 +56,7 @@ The repository also include [Phalcon Devtools](https://github.com/phalcon/phalco
       scaffold         (alias of: create-scaffold)
       migration        (alias of: create-migration)
       webtools         (alias of: create-webtools)
+      console          (alias of: shell, psysh)
 
 ## Build yourself
 
