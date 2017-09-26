@@ -2,7 +2,7 @@ FROM php:7.0-alpine
 LABEL maintainer MilesChou <jangconan@gmail.com>
 
 ENV PHALCON_VERSION=3.2.2
-ENV PHALCON_DEV_TOOLS_VERSION=3.2.0
+ENV PHALCON_DEV_TOOLS_VERSION=3.2.5
 
 # Compile Phalcon
 RUN set -xe && \
