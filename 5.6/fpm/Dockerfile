@@ -1,7 +1,7 @@
 FROM php:5.6-fpm
 LABEL maintainer MilesChou <jangconan@gmail.com>
 
-ENV PHALCON_VERSION=3.2.2
+ENV PHALCON_VERSION=3.2.3
 ENV PHALCON_DEV_TOOLS_VERSION=3.2.5
 
 # Compile Phalcon
