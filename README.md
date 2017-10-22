@@ -65,8 +65,8 @@ Recommend 2G+ RAM when build image yourself. Maybe wait a long time for compile 
 
 ## Memo
 
-  Update phalcon version:
-  make VERSION=X.X.X update
+  Update:
+  make VERSION=X.X.X DEVTOOLS_VERSION=Y.Y.Y update
 
 ## Thanks
 
