@@ -1,6 +1,7 @@
 # Docker Phalcon
 
 ![Phalcon Version](https://img.shields.io/badge/Phalcon-3.2.4-blue.svg)
+![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-3.2.8-blue.svg)
 [![Build Status](https://travis-ci.org/MilesChou/docker-phalcon.svg?branch=master)](https://travis-ci.org/MilesChou/docker-phalcon)
 [![](https://images.microbadger.com/badges/version/mileschou/phalcon:alpine.svg)](http://microbadger.com/images/mileschou/phalcon:alpine "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/image/mileschou/phalcon:alpine.svg)](http://microbadger.com/images/mileschou/phalcon:alpine "Get your own image badge on microbadger.com")
@@ -61,6 +62,11 @@ The repository also include [Phalcon Devtools](https://github.com/phalcon/phalco
 ## Build yourself
 
 Recommend 2G+ RAM when build image yourself. Maybe wait a long time for compile if only 1G RAM.
+
+## Memo
+
+  Update:
+  make VERSION=X.X.X DEVTOOLS_VERSION=Y.Y.Y update
 
 ## Thanks
 
