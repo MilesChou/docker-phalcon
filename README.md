@@ -62,6 +62,11 @@ The repository also include [Phalcon Devtools](https://github.com/phalcon/phalco
 
 Recommend 2G+ RAM when build image yourself. Maybe wait a long time for compile if only 1G RAM.
 
+## Memo
+
+  Update phalcon version:
+  make VERSION=X.X.X update
+
 ## Thanks
 
 * [GitHub](https://github.com/)
