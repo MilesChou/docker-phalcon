@@ -35,7 +35,7 @@ The repository is a Docker image based on [Docker official PHP image](https://hu
 Here is a simple test command that can confirm the extension has been loaded.
 
     $ docker run -i -t --rm mileschou/phalcon php --ri phalcon | grep -i ^version
-    Version => 3.2.3
+    Version => 3.2.4
 
 ## Phalcon Devtools CLI
 
