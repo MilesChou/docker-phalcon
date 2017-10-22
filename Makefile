@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 IMAGE := mileschou/phalcon
-VERSION := 3.2.1
+VERSION := 3.2.4
 
 .PHONY: all build
 
@@ -46,5 +46,5 @@ push:
 
 update:
 	@echo Update Phalcon version to $(VERSION) ...
-	@find */**/Dockerfile */Dockerfile | xargs -I {} sed -i '' 's/^ENV PHALCON_VERSION=.*/ENV PHALCON_VERSION=$(VERSION)/g' {}
-	@sed -i '' 's/^VERSION := .*/VERSION := $(VERSION)/g' Makefile
+	@find */**/Dockerfile */Dockerfile -exec sed -i -e 's/^ENV PHALCON_VERSION=.*/ENV PHALCON_VERSION=$(VERSION)/g' {} +;
+	@sed -i -e 's/^VERSION := .*/VERSION := $(VERSION)/g' Makefile
