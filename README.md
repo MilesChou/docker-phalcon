@@ -14,7 +14,11 @@ The repository is a Docker image based on [Docker official PHP image](https://hu
 
 ## Supported tags and respective `Dockerfile` links
 
-* [`7.1-cli`, `cli`, `7.1`, `latest` (7.1/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/Dockerfile)
+* [`7.2-cli`, `cli`, `7.2`, `latest` (7.2/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/Dockerfile)
+* [`7.2-alpine`, `alpine` (7.2/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/alpine/Dockerfile)
+* [`7.2-apache`, `apache` (7.2/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/apache/Dockerfile)
+* [`7.2-fpm`, `fpm` (7.2/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/fpm/Dockerfile)
+* [`7.1-cli`, `7.1` (7.1/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/Dockerfile)
 * [`7.1-alpine`, `alpine` (7.1/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/alpine/Dockerfile)
 * [`7.1-apache`, `apache` (7.1/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/apache/Dockerfile)
 * [`7.1-fpm`, `fpm` (7.1/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/fpm/Dockerfile)
