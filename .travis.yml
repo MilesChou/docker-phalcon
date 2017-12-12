@@ -2,7 +2,11 @@ language: bash
 services: docker
 
 env:
-  - VERSION=7.1 VARIANT= EXTRA_TAG=latest CLI_TAG=7.1-cli
+  - VERSION=7.2 VARIANT= EXTRA_TAG=latest CLI_TAG=7.2-cli
+  - VERSION=7.2 VARIANT=alpine EXTRA_TAG=alpine
+  - VERSION=7.2 VARIANT=apache EXTRA_TAG=apache
+  - VERSION=7.2 VARIANT=fpm EXTRA_TAG=fpm
+  - VERSION=7.1 VARIANT= CLI_TAG=7.1-cli
   - VERSION=7.1 VARIANT=alpine EXTRA_TAG=alpine
   - VERSION=7.1 VARIANT=apache EXTRA_TAG=apache
   - VERSION=7.1 VARIANT=fpm EXTRA_TAG=fpm
