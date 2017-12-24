@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 IMAGE := mileschou/phalcon
-VERSION := 3.2.4
+VERSION := 3.3.0
 DEVTOOLS_VERSION := 3.2.8
 
 .PHONY: all build
