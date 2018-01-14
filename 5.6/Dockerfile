@@ -2,7 +2,7 @@ FROM php:5.6
 LABEL maintainer MilesChou <jangconan@gmail.com>
 
 ENV PHALCON_VERSION=3.3.1
-ENV PHALCON_DEV_TOOLS_VERSION=3.2.8
+ENV PHALCON_DEV_TOOLS_VERSION=3.2.12
 
 # Compile Phalcon
 RUN set -xe && \
