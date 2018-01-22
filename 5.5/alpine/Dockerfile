@@ -1,20 +1,31 @@
 FROM php:5.5-alpine
-LABEL maintainer MilesChou <jangconan@gmail.com>
 
-ENV PHALCON_VERSION=3.3.1
-ENV PHALCON_DEV_TOOLS_VERSION=3.2.12
+LABEL maintainer="MilesChou <github.com/MilesChou>"
+LABEL maintainer="fizzka <github.com/fizzka>"
 
-# Compile Phalcon
+ARG PHALCON_VERSION=3.3.1
+ARG PHALCON_DEV_TOOLS_VERSION=3.2.12
+ARG PHALCON_EXT_PATH=php5/64bits
+
 RUN set -xe && \
-        # Add virtual packages. It will remove when done.
-        apk add --no-cache --virtual .build-deps autoconf g++ make && \
+        # Compile Phalcon
         curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
-        tar xzf v${PHALCON_VERSION}.tar.gz && cd cphalcon-${PHALCON_VERSION}/build && sh install && \
-        docker-php-ext-enable phalcon && \
-        cd ../.. && rm -rf v${PHALCON_VERSION}.tar.gz cphalcon-${PHALCON_VERSION} && \
-        apk del .build-deps && \
-        # Insall Phalcon Devtools, see https://github.com/phalcon/phalcon-devtools/
+        tar xzf v${PHALCON_VERSION}.tar.gz && \
+        docker-php-source extract && \
+        ln -s /cphalcon-${PHALCON_VERSION}/build/${PHALCON_EXT_PATH} /usr/src/php/ext/phalcon && \
+        docker-php-ext-install -j $(getconf _NPROCESSORS_ONLN) phalcon && \
+        docker-php-source delete &&\
+
+        # Insall Phalcon Devtools for testing, see https://github.com/phalcon/phalcon-devtools/
         curl -LO https://github.com/phalcon/phalcon-devtools/archive/v${PHALCON_DEV_TOOLS_VERSION}.tar.gz && \
         tar xzf v${PHALCON_DEV_TOOLS_VERSION}.tar.gz && \
-        mv phalcon-devtools-${PHALCON_DEV_TOOLS_VERSION} /usr/local/phalcon-devtools && \
-        ln -s /usr/local/phalcon-devtools/phalcon.php /usr/local/bin/phalcon
+
+        # Test Phalcon using Phalcon Devtools
+        php /phalcon-devtools-3.2.12/phalcon.php && \
+
+        # Remove all temp files
+        rm -rf \
+            v${PHALCON_VERSION}.tar.gz \
+            /cphalcon-${PHALCON_VERSION} \
+            v${PHALCON_DEV_TOOLS_VERSION}.tar.gz \
+            phalcon-devtools-${PHALCON_DEV_TOOLS_VERSION}
