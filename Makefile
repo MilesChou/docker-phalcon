@@ -3,7 +3,7 @@ IMAGE := mileschou/phalcon
 VERSION := 3.3.1
 DEVTOOLS_VERSION := 3.2.12
 
-.PHONY: all build
+.PHONY: all build push update variants clean
 
 # ------------------------------------------------------------------------------
 
@@ -66,3 +66,12 @@ update:
 	@sed -i 's/^DEVTOOLS_VERSION := .*/DEVTOOLS_VERSION := $(DEVTOOLS_VERSION)/g' Makefile
 	@# shields
 	@sed -i 's/phalcon--devtools-[^-]*/phalcon--devtools-$(DEVTOOLS_VERSION)/g' README.md
+
+variants: php
+	@find php -name "Dockerfile" | sed 's/php\/\(.*\)\/Dockerfile/\1/'
+
+php:
+	git clone -q --depth 1 git@github.com:docker-library/php.git php
+
+clean:
+	rm -rf php
