@@ -78,3 +78,8 @@ Recommend 2G+ RAM when build image yourself. Maybe wait a long time for compile 
 * [Docker Hub](https://hub.docker.com/)
 * [Shields.io](https://img.shields.io/) provide docker hub stars and pulls badge
 * [MicroBadger](https://microbadger.com/) provide image size and version badge
+
+## Contributors
+
+* [@MilesChou](https://github.com/MilesChou)
+* [@fizzka](https://github.com/fizzka)
