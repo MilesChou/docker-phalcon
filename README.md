@@ -42,14 +42,30 @@ Here is a simple test command that can confirm the extension has been loaded.
     $ docker run -i -t --rm mileschou/phalcon php --ri phalcon | grep -i ^version
     Version => 3.3.1
 
-## Phalcon Devtools CLI
+## Build Image included Phalcon Devtools CLI
 
-The repository also include [Phalcon Devtools](https://github.com/phalcon/phalcon-devtools). Here is a simple command.
+Here is a Dockerfile example:
 
-    $ docker run -i -t --rm mileschou/phalcon phalcon
+```dockerfile
+FROM mileschou/phalcon:7.2-alpine
 
-    Phalcon DevTools (3.2.0)
+ENV PHALCON_DEV_TOOLS_VERSION=3.2.12
 
+RUN set -xe && \
+        # Insall Phalcon Devtools, see https://github.com/phalcon/phalcon-devtools/
+        curl -LO https://github.com/phalcon/phalcon-devtools/archive/v${PHALCON_DEV_TOOLS_VERSION}.tar.gz && \
+        tar xzf v${PHALCON_DEV_TOOLS_VERSION}.tar.gz && \
+        mv phalcon-devtools-${PHALCON_DEV_TOOLS_VERSION} /usr/local/phalcon-devtools && \
+        ln -s /usr/local/phalcon-devtools/phalcon.php /usr/local/bin/phalcon
+```
+
+Build and run Phalcon DevTools:
+
+    $ docker build -t myphalcon .
+    $ docker run -i -t --rm myphalcon phalcon
+
+    Phalcon DevTools (3.2.12)
+    
     Available commands:
       info             (alias of: i)
       commands         (alias of: list, enumerate)
@@ -61,6 +77,7 @@ The repository also include [Phalcon Devtools](https://github.com/phalcon/phalco
       scaffold         (alias of: create-scaffold)
       migration        (alias of: create-migration)
       webtools         (alias of: create-webtools)
+      serve            (alias of: server)
       console          (alias of: shell, psysh)
 
 ## Build yourself
