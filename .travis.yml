@@ -1,6 +1,10 @@
 language: bash
 services: docker
 
+branches:
+  only:
+  - master
+
 env:
   - VERSION=7.2 VARIANT= EXTRA_TAG=latest CLI_TAG=7.2-cli
   - VERSION=7.2 VARIANT=alpine EXTRA_TAG=alpine
@@ -33,9 +37,11 @@ before_script:
 
 script:
   - docker build -t "$IMAGE_NAME" "${VARIANT:-.}"
-  - if [ "$EXTRA_TAG" != "" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$EXTRA_TAG" ; fi
-  - if [ "$CLI_TAG" != "" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$CLI_TAG" ; fi
+  - if [ "" != "$EXTRA_TAG" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$EXTRA_TAG" ; fi
+  - if [ "" != "$CLI_TAG" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$CLI_TAG" ; fi
   - docker images
   - docker run -i -t --rm $IMAGE_NAME php -m
-  - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
-  - docker push $IMAGE
+
+after_success:
+  - if [ "false" == "$TRAVIS_PULL_REQUEST" ]; then docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD ; fi
+  - if [ "false" == "$TRAVIS_PULL_REQUEST" ]; then docker push $IMAGE ; fi
