@@ -1,7 +1,6 @@
 FROM php:5.5-alpine
 
-LABEL maintainer="MilesChou <github.com/MilesChou>"
-LABEL maintainer="fizzka <github.com/fizzka>"
+LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
 ARG PHALCON_VERSION=3.3.1
 ARG PHALCON_DEV_TOOLS_VERSION=3.2.12
@@ -15,14 +14,11 @@ RUN set -xe && \
         ln -s /cphalcon-${PHALCON_VERSION}/build/${PHALCON_EXT_PATH} /usr/src/php/ext/phalcon && \
         docker-php-ext-install -j $(getconf _NPROCESSORS_ONLN) phalcon && \
         docker-php-source delete &&\
-
         # Insall Phalcon Devtools for testing, see https://github.com/phalcon/phalcon-devtools/
         curl -LO https://github.com/phalcon/phalcon-devtools/archive/v${PHALCON_DEV_TOOLS_VERSION}.tar.gz && \
         tar xzf v${PHALCON_DEV_TOOLS_VERSION}.tar.gz && \
-
         # Test Phalcon using Phalcon Devtools
         php /phalcon-devtools-3.2.12/phalcon.php && \
-
         # Remove all temp files
         rm -rf \
             v${PHALCON_VERSION}.tar.gz \
