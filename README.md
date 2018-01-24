@@ -42,7 +42,7 @@ Here is a simple test command that can confirm the extension has been loaded.
     $ docker run -it --rm mileschou/phalcon php --ri phalcon | grep -i ^version
     Version => 3.3.1
 
-## Build Image included simple script `docker-phalcon-install-devtools` to install latest release of Phalcon Devtools CLI
+## Builded Image included simple script `docker-phalcon-install-devtools` to install latest release of Phalcon Devtools CLI
 
 Here is usage example:
 
