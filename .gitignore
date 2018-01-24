@@ -24,3 +24,6 @@ Desktop.ini
 .project
 .buildpath
 .settings
+
+# Docker parent repo
+/php

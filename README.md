@@ -69,8 +69,13 @@ Recommend 2G+ RAM when build image yourself. Maybe wait a long time for compile 
 
 ## Memo
 
-  Update:
-  make VERSION=X.X.X DEVTOOLS_VERSION=Y.Y.Y update
+Update:
+
+    make VERSION=X.X.X DEVTOOLS_VERSION=Y.Y.Y update
+
+List the variants of Docker official PHP:
+
+    make variants
 
 ## Thanks
 
