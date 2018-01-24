@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+INSTALL_VERSION=3.3.x
+
+if [ "$1" != "" ]; then
+    INSTALL_VERSION=$1
+fi
+
+# Insall Phalcon Devtools, see https://github.com/phalcon/phalcon-devtools/
+curl -LO https://github.com/phalcon/phalcon-devtools/archive/${INSTALL_VERSION}.tar.gz
+tar xzf ${INSTALL_VERSION}.tar.gz
+mv phalcon-devtools-${INSTALL_VERSION} /usr/local/phalcon-devtools
+ln -s /usr/local/phalcon-devtools/phalcon.php /usr/local/bin/phalcon
