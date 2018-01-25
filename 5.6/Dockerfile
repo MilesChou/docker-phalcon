@@ -3,7 +3,6 @@ FROM php:5.6
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
 ARG PHALCON_VERSION=3.3.1
-ARG PHALCON_DEV_TOOLS_VERSION=3.2.12
 ARG PHALCON_EXT_PATH=php5/64bits
 
 RUN set -xe && \
@@ -11,16 +10,9 @@ RUN set -xe && \
         curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
         tar xzf ${PWD}/v${PHALCON_VERSION}.tar.gz && \
         docker-php-ext-install -j $(getconf _NPROCESSORS_ONLN) ${PWD}/cphalcon-${PHALCON_VERSION}/build/${PHALCON_EXT_PATH} && \
-        # Install Phalcon Devtools for testing, see https://github.com/phalcon/phalcon-devtools/
-        curl -LO https://github.com/phalcon/phalcon-devtools/archive/v${PHALCON_DEV_TOOLS_VERSION}.tar.gz && \
-        tar xzf ${PWD}/v${PHALCON_DEV_TOOLS_VERSION}.tar.gz && \
-        # Test Phalcon using Phalcon Devtools
-        php ${PWD}/phalcon-devtools-3.2.12/phalcon.php && \
         # Remove all temp files
         rm -r \
             ${PWD}/v${PHALCON_VERSION}.tar.gz \
-            ${PWD}/cphalcon-${PHALCON_VERSION} \
-            ${PWD}/v${PHALCON_DEV_TOOLS_VERSION}.tar.gz \
-            ${PWD}/phalcon-devtools-${PHALCON_DEV_TOOLS_VERSION}
+            ${PWD}/cphalcon-${PHALCON_VERSION}
 
 COPY docker-phalcon-* /usr/local/bin/

@@ -28,7 +28,7 @@ env:
   - VERSION=5.5 VARIANT=fpm
 
 before_script:
-  - IMAGE="hou/phalcon"
+  - IMAGE="mileschou/phalcon"
   - IMAGE_VERSION="${VERSION}${VARIANT:+-$VARIANT}"
   - IMAGE_VERSION="${IMAGE_VERSION//'/'/-}"
   - IMAGE_NAME="$IMAGE:$IMAGE_VERSION"
