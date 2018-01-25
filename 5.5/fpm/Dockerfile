@@ -25,3 +25,5 @@ RUN set -xe && \
             ${PWD}/cphalcon-${PHALCON_VERSION} \
             ${PWD}/v${PHALCON_DEV_TOOLS_VERSION}.tar.gz \
             ${PWD}/phalcon-devtools-${PHALCON_DEV_TOOLS_VERSION}
+
+COPY docker-phalcon-* /usr/local/bin/
