@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+INSTALL_VERSION=3.2.12
+
+if [ "$1" != "" ]; then
+    INSTALL_VERSION=$1
+fi
+
+curl -LO https://github.com/phalcon/phalcon-devtools/archive/v${INSTALL_VERSION}.tar.gz
+tar xzf v${INSTALL_VERSION}.tar.gz
+rm -rf v${INSTALL_VERSION}.tar.gz
+mv phalcon-devtools-${INSTALL_VERSION} /usr/src/phalcon-devtools
+ln -sf /usr/src/phalcon-devtools/phalcon.php /usr/local/bin/phalcon

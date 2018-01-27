@@ -28,7 +28,6 @@ env:
   - VERSION=5.5 VARIANT=fpm
 
 before_script:
-  - cd "$VERSION"
   - IMAGE="mileschou/phalcon"
   - IMAGE_VERSION="${VERSION}${VARIANT:+-$VARIANT}"
   - IMAGE_VERSION="${IMAGE_VERSION//'/'/-}"
@@ -36,7 +35,7 @@ before_script:
   - echo "$IMAGE_NAME"
 
 script:
-  - docker build -t "$IMAGE_NAME" "${VARIANT:-.}"
+  - docker build -t "$IMAGE_NAME" -f $VERSION/${VARIANT:-.}/Dockerfile .
   - if [ "" != "$EXTRA_TAG" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$EXTRA_TAG" ; fi
   - if [ "" != "$CLI_TAG" ]; then docker tag "$IMAGE_NAME" "$IMAGE:$CLI_TAG" ; fi
   - docker images

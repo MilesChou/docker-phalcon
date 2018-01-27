@@ -39,16 +39,16 @@ The repository is a Docker image based on [Docker official PHP image](https://hu
 
 Here is a simple test command that can confirm the extension has been loaded.
 
-    $ docker run -i -t --rm mileschou/phalcon php --ri phalcon | grep -i ^version
+    $ docker run -it --rm mileschou/phalcon php --ri phalcon | grep -i ^version
     Version => 3.3.1
 
-## Phalcon Devtools CLI
+## Builded Image included simple script `docker-phalcon-install-devtools` to install latest release of Phalcon Devtools CLI
 
-The repository also include [Phalcon Devtools](https://github.com/phalcon/phalcon-devtools). Here is a simple command.
+Here is usage example:
 
-    $ docker run -i -t --rm mileschou/phalcon phalcon
+    $ docker run -it --rm mileschou/phalcon sh -c 'docker-phalcon-install-devtools; phalcon'
 
-    Phalcon DevTools (3.2.0)
+    Phalcon DevTools (3.2.12)
 
     Available commands:
       info             (alias of: i)
@@ -61,6 +61,7 @@ The repository also include [Phalcon Devtools](https://github.com/phalcon/phalco
       scaffold         (alias of: create-scaffold)
       migration        (alias of: create-migration)
       webtools         (alias of: create-webtools)
+      serve            (alias of: server)
       console          (alias of: shell, psysh)
 
 ## Build yourself
