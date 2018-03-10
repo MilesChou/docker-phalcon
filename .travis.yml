@@ -10,14 +10,17 @@ env:
   - VERSION=7.2 VARIANT=alpine EXTRA_TAG=alpine
   - VERSION=7.2 VARIANT=apache EXTRA_TAG=apache
   - VERSION=7.2 VARIANT=fpm EXTRA_TAG=fpm
+  - VERSION=7.2 VARIANT=fpm-alpine EXTRA_TAG=fpm-alpine
   - VERSION=7.1 VARIANT= CLI_TAG=7.1-cli
   - VERSION=7.1 VARIANT=alpine EXTRA_TAG=alpine
   - VERSION=7.1 VARIANT=apache EXTRA_TAG=apache
   - VERSION=7.1 VARIANT=fpm EXTRA_TAG=fpm
+  - VERSION=7.1 VARIANT=fpm-alpine EXTRA_TAG=fpm-alpine
   - VERSION=7.0 VARIANT= CLI_TAG=7.0-cli
   - VERSION=7.0 VARIANT=alpine
   - VERSION=7.0 VARIANT=apache
   - VERSION=7.0 VARIANT=fpm
+  - VERSION=7.0 VARIANT=fpm-alpine EXTRA_TAG=fpm-alpine
   - VERSION=5.6 VARIANT= CLI_TAG=5.6-cli
   - VERSION=5.6 VARIANT=alpine
   - VERSION=5.6 VARIANT=apache
