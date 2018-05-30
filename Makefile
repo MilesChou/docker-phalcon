@@ -68,7 +68,7 @@ update:
 	@# readme test version
 	@sed -i 's/Version => .*/Version => $(VERSION)/g' README.md
 	@echo Update Phalcon-devtools version to $(DEVTOOLS_VERSION) ...
-	@find */**/Dockerfile */Dockerfile -exec sed -i 's/^ENV PHALCON_DEV_TOOLS_VERSION=.*/ENV PHALCON_DEV_TOOLS_VERSION=$(DEVTOOLS_VERSION)/g' {} +;
+	@find docker-phalcon-install-devtools -exec sed -i 's/^INSTALL_VERSION=.*/INSTALL_VERSION=$(DEVTOOLS_VERSION)/g' {} +;
 	@sed -i 's/^DEVTOOLS_VERSION := .*/DEVTOOLS_VERSION := $(DEVTOOLS_VERSION)/g' Makefile
 	@# shields
 	@sed -i 's/phalcon--devtools-[^-]*/phalcon--devtools-$(DEVTOOLS_VERSION)/g' README.md
