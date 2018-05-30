@@ -10,29 +10,29 @@ DEVTOOLS_VERSION := 3.2.13
 all: build
 
 build: update
-	docker build -t=$(IMAGE):7.2 7.2
-	docker build -t=$(IMAGE):7.2-alpine 7.2/alpine
-	docker build -t=$(IMAGE):7.2-apache 7.2/apache
-	docker build -t=$(IMAGE):7.2-fpm 7.2/fpm
-	docker build -t=$(IMAGE):7.2-fpm-alpine 7.2/fpm-alpine
-	docker build -t=$(IMAGE):7.1 7.1
-	docker build -t=$(IMAGE):7.1-alpine 7.1/alpine
-	docker build -t=$(IMAGE):7.1-apache 7.1/apache
-	docker build -t=$(IMAGE):7.1-fpm 7.1/fpm
-	docker build -t=$(IMAGE):7.1-fpm-alpine 7.1/fpm-alpine
-	docker build -t=$(IMAGE):7.0 7.0
-	docker build -t=$(IMAGE):7.0-alpine 7.0/alpine
-	docker build -t=$(IMAGE):7.0-apache 7.0/apache
-	docker build -t=$(IMAGE):7.0-fpm 7.0/fpm
-	docker build -t=$(IMAGE):7.0-fpm-alpine 7.0/fpm-alpine
-	docker build -t=$(IMAGE):5.6 5.6
-	docker build -t=$(IMAGE):5.6-alpine 5.6/alpine
-	docker build -t=$(IMAGE):5.6-apache 5.6/apache
-	docker build -t=$(IMAGE):5.6-fpm 5.6/fpm
-	docker build -t=$(IMAGE):5.5 5.5
-	docker build -t=$(IMAGE):5.5-alpine 5.5/alpine
-	docker build -t=$(IMAGE):5.5-apache 5.5/apache
-	docker build -t=$(IMAGE):5.5-fpm 5.5/fpm
+	docker build -t=$(IMAGE):7.2 -f 7.2/Dockerfile .
+	docker build -t=$(IMAGE):7.2-alpine -f 7.2/alpine/Dockerfile .
+	docker build -t=$(IMAGE):7.2-apache -f 7.2/apache/Dockerfile .
+	docker build -t=$(IMAGE):7.2-fpm -f 7.2/fpm/Dockerfile .
+	docker build -t=$(IMAGE):7.2-fpm -f-alpine 7.2/fpm-alpine/Dockerfile .
+	docker build -t=$(IMAGE):7.1 7 -f.1/Dockerfile .
+	docker build -t=$(IMAGE):7.1-alpine -f 7.1/alpine/Dockerfile .
+	docker build -t=$(IMAGE):7.1-apache -f 7.1/apache/Dockerfile .
+	docker build -t=$(IMAGE):7.1-fpm -f 7.1/fpm/Dockerfile .
+	docker build -t=$(IMAGE):7.1-fpm -f-alpine 7.1/fpm-alpine/Dockerfile .
+	docker build -t=$(IMAGE):7.0 7 -f.0/Dockerfile .
+	docker build -t=$(IMAGE):7.0-alpine -f 7.0/alpine/Dockerfile .
+	docker build -t=$(IMAGE):7.0-apache -f 7.0/apache/Dockerfile .
+	docker build -t=$(IMAGE):7.0-fpm -f 7.0/fpm/Dockerfile .
+	docker build -t=$(IMAGE):7.0-fpm -f-alpine 7.0/fpm-alpine/Dockerfile .
+	docker build -t=$(IMAGE):5.6 5 -f.6/Dockerfile .
+	docker build -t=$(IMAGE):5.6-alpine -f 5.6/alpine/Dockerfile .
+	docker build -t=$(IMAGE):5.6-apache -f 5.6/apache/Dockerfile .
+	docker build -t=$(IMAGE):5.6-fpm -f 5.6/fpm/Dockerfile .
+	docker build -t=$(IMAGE):5.5 5 -f.5/Dockerfile .
+	docker build -t=$(IMAGE):5.5-alpine -f 5.5/alpine/Dockerfile .
+	docker build -t=$(IMAGE):5.5-apache -f 5.5/apache/Dockerfile .
+	docker build -t=$(IMAGE):5.5-fpm -f 5.5/fpm/Dockerfile .
 
 push:
 	docker push -t=$(IMAGE):7.2
