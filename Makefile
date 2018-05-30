@@ -61,7 +61,7 @@ push:
 
 update:
 	@echo Update Phalcon version to $(VERSION) ...
-	@find */**/Dockerfile */Dockerfile -exec sed -i 's/^ENV PHALCON_VERSION=.*/ENV PHALCON_VERSION=$(VERSION)/g' {} +;
+	@find */**/Dockerfile */Dockerfile -exec sed -i 's/^ARG PHALCON_VERSION=.*/ARG PHALCON_VERSION=$(VERSION)/g' {} +;
 	@sed -i 's/^VERSION := .*/VERSION := $(VERSION)/g' Makefile
 	@# shields
 	@sed -i 's/Phalcon-[^-]*/Phalcon-$(VERSION)/g' README.md
