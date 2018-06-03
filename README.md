@@ -51,7 +51,7 @@ Here is usage example:
 
     $ docker run -it --rm mileschou/phalcon sh -c 'docker-phalcon-install-devtools; phalcon'
 
-    Phalcon DevTools (3.2.12)
+    Phalcon DevTools (3.2.13)
 
     Available commands:
       info             (alias of: i)
