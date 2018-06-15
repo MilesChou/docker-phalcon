@@ -8,7 +8,7 @@
 
 Docker Phalcon base image, see https://hub.docker.com/r/mileschou/phalcon/
 
-The repository is a Docker image based on [Docker official PHP image](https://hub.docker.com/_/php/) with [Phalcon Framework](https://phalconphp.com/) Version 3.4+.
+The repository is a Docker image based on [Docker official PHP image](https://hub.docker.com/_/php/) with [Phalcon Framework](https://phalconphp.com/).
 
 ## Supported tags and respective `Dockerfile` links
 
