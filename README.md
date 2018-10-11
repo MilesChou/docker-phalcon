@@ -1,7 +1,7 @@
 # Docker Phalcon
 
 [![Build Status](https://travis-ci.org/MilesChou/docker-phalcon.svg?branch=master)](https://travis-ci.org/MilesChou/docker-phalcon)
-![Phalcon Version](https://img.shields.io/badge/Phalcon-3.4.0-blue.svg)
+![Phalcon Version](https://img.shields.io/badge/Phalcon-3.4.1-blue.svg)
 ![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-3.4.0-blue.svg)
 [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
@@ -41,7 +41,7 @@ The repository is a Docker image based on [Docker official PHP image](https://hu
 Here is a simple test command that can confirm the extension has been loaded.
 
     $ docker run -it --rm mileschou/phalcon php --ri phalcon | grep -i ^version
-    Version => 3.4.0
+    Version => 3.4.1
 
 ## Builded Image included simple script `docker-phalcon-install-devtools` to install latest release of Phalcon Devtools CLI
 

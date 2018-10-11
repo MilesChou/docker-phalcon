@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
-IMAGE := mileschou/phalcon
-VERSION := 3.4.0
+IMAGE := amazingdreams/phalcon
+VERSION := 3.4.1
 DEVTOOLS_VERSION := 3.4.0
 
 .PHONY: all build push update variants clean
