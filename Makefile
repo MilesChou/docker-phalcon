@@ -35,29 +35,29 @@ build: update
 	docker build -t=$(IMAGE):5.5-fpm -f 5.5/fpm/Dockerfile .
 
 push:
-	docker push -t=$(IMAGE):7.2
-	docker push -t=$(IMAGE):7.2-alpine
-	docker push -t=$(IMAGE):7.2-apache
-	docker push -t=$(IMAGE):7.2-fpm
-	docker push -t=$(IMAGE):7.2-fpm-alpine
-	docker push -t=$(IMAGE):7.1
-	docker push -t=$(IMAGE):7.1-alpine
-	docker push -t=$(IMAGE):7.1-apache
-	docker push -t=$(IMAGE):7.1-fpm
-	docker push -t=$(IMAGE):7.1-fpm-alpine
-	docker push -t=$(IMAGE):7.0
-	docker push -t=$(IMAGE):7.0-alpine
-	docker push -t=$(IMAGE):7.0-apache
-	docker push -t=$(IMAGE):7.0-fpm
-	docker push -t=$(IMAGE):7.0-fpm-alpine
-	docker push -t=$(IMAGE):5.6
-	docker push -t=$(IMAGE):5.6-alpine
-	docker push -t=$(IMAGE):5.6-apache
-	docker push -t=$(IMAGE):5.6-fpm
-	docker push -t=$(IMAGE):5.5
-	docker push -t=$(IMAGE):5.5-alpine
-	docker push -t=$(IMAGE):5.5-apache
-	docker push -t=$(IMAGE):5.5-fpm
+	docker push $(IMAGE):7.2
+	docker push $(IMAGE):7.2-alpine
+	docker push $(IMAGE):7.2-apache
+	docker push $(IMAGE):7.2-fpm
+	docker push $(IMAGE):7.2-fpm-alpine
+	docker push $(IMAGE):7.1
+	docker push $(IMAGE):7.1-alpine
+	docker push $(IMAGE):7.1-apache
+	docker push $(IMAGE):7.1-fpm
+	docker push $(IMAGE):7.1-fpm-alpine
+	docker push $(IMAGE):7.0
+	docker push $(IMAGE):7.0-alpine
+	docker push $(IMAGE):7.0-apache
+	docker push $(IMAGE):7.0-fpm
+	docker push $(IMAGE):7.0-fpm-alpine
+	docker push $(IMAGE):5.6
+	docker push $(IMAGE):5.6-alpine
+	docker push $(IMAGE):5.6-apache
+	docker push $(IMAGE):5.6-fpm
+	docker push $(IMAGE):5.5
+	docker push $(IMAGE):5.5-alpine
+	docker push $(IMAGE):5.5-apache
+	docker push $(IMAGE):5.5-fpm
 
 update:
 	@echo Update Phalcon version to $(VERSION) ...
