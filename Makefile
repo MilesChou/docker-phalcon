@@ -1,5 +1,5 @@
 #!/usr/bin/make -f
-IMAGE := amazingdreams/phalcon
+IMAGE := mileschou/phalcon
 VERSION := 3.4.1
 DEVTOOLS_VERSION := 3.4.0
 
