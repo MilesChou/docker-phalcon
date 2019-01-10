@@ -2,7 +2,7 @@ FROM php:7.0-fpm
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
-ARG PHALCON_VERSION=3.4.1
+ARG PHALCON_VERSION=3.4.2
 ARG PHALCON_EXT_PATH=php7/64bits
 
 RUN set -xe && \
