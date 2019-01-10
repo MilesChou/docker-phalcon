@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/MilesChou/docker-phalcon.svg?branch=master)](https://travis-ci.org/MilesChou/docker-phalcon)
 ![Phalcon Version](https://img.shields.io/badge/Phalcon-3.4.2-blue.svg)
-![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-3.4.0-blue.svg)
+![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-3.4.1-blue.svg)
 [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 
