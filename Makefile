@@ -10,6 +10,11 @@ DEVTOOLS_VERSION := 3.4.1
 all: build
 
 build: update
+	docker build -t=$(IMAGE):7.3 -f 7.3/Dockerfile .
+	docker build -t=$(IMAGE):7.3-alpine -f 7.3/alpine/Dockerfile .
+	docker build -t=$(IMAGE):7.3-apache -f 7.3/apache/Dockerfile .
+	docker build -t=$(IMAGE):7.3-fpm -f 7.3/fpm/Dockerfile .
+	docker build -t=$(IMAGE):7.3-fpm-alpine -f 7.3/fpm-alpine/Dockerfile .
 	docker build -t=$(IMAGE):7.2 -f 7.2/Dockerfile .
 	docker build -t=$(IMAGE):7.2-alpine -f 7.2/alpine/Dockerfile .
 	docker build -t=$(IMAGE):7.2-apache -f 7.2/apache/Dockerfile .
@@ -35,6 +40,11 @@ build: update
 	docker build -t=$(IMAGE):5.5-fpm -f 5.5/fpm/Dockerfile .
 
 push:
+	docker push $(IMAGE):7.3
+	docker push $(IMAGE):7.3-alpine
+	docker push $(IMAGE):7.3-apache
+	docker push $(IMAGE):7.3-fpm
+	docker push $(IMAGE):7.3-fpm-alpine
 	docker push $(IMAGE):7.2
 	docker push $(IMAGE):7.2-alpine
 	docker push $(IMAGE):7.2-apache
