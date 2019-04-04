@@ -10,6 +10,8 @@ Docker Phalcon base image, see https://hub.docker.com/r/mileschou/phalcon/
 
 The repository is a Docker image based on [Docker official PHP image](https://hub.docker.com/_/php/) with [Phalcon Framework](https://phalconphp.com/).
 
+The [Phalcon Action](https://github.com/marketplace/actions/phalcon-action) is Use GitHub Actions with this image.
+
 ## Supported tags and respective `Dockerfile` links
 
 * [`7.3-cli`, `cli`, `7.3`, `latest` (7.3/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.3/Dockerfile)
