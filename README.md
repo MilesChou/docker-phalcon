@@ -45,9 +45,9 @@ The [Phalcon Action](https://github.com/marketplace/actions/phalcon-action) is U
 
 ## Image Test
 
-Here is a simple test command that can confirm the extension has been loaded.
+Here is a simple test command that can confirm the extension has been loaded & check version.
 
-    $ docker run -it --rm mileschou/phalcon php --ri phalcon | grep -i ^version
+    $ docker run --rm mileschou/phalcon:alpine php --ri phalcon | grep -i ^version
     Version => 3.4.4
 
 ## Running a php script
