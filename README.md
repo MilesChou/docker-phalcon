@@ -1,7 +1,7 @@
 # Docker Phalcon
 
 [![Build Status](https://travis-ci.org/MilesChou/docker-phalcon.svg?branch=master)](https://travis-ci.org/MilesChou/docker-phalcon)
-![Phalcon Version](https://img.shields.io/badge/Phalcon-3.4.4-blue.svg)
+![Phalcon Version](https://img.shields.io/badge/Phalcon-3.4.5-blue.svg)
 ![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-3.4.2-blue.svg)
 [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
@@ -48,7 +48,7 @@ The [Phalcon Action](https://github.com/marketplace/actions/phalcon-action) is U
 Here is a simple test command that can confirm the extension has been loaded & check version.
 
     $ docker run --rm mileschou/phalcon:alpine php --ri phalcon | grep -i ^version
-    Version => 3.4.4
+    Version => 3.4.5
 
 ## Running a php script
 
