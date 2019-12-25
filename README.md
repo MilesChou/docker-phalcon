@@ -33,34 +33,37 @@ The dockerfile with Phalcon 3.x and old PHP version can find at [phalcon-v3.x br
 
 Here is a simple test command that can confirm the extension has been loaded & check version.
 
-    $ docker run --rm mileschou/phalcon:alpine php --ri phalcon | grep -i ^version
+    $ docker run -it --rm mileschou/phalcon:alpine sh -c "php --ri phalcon | grep -i ^version" 
     Version => 4.0.0
 
 ## Running a php script
 
     $ docker run -v ${PWD}:/usr/src/app -w /usr/src/app mileschou/phalcon:7.4-cli php script.php
 
-## Builded Image included simple script `docker-phalcon-install-devtools` to install latest release of Phalcon Devtools CLI
+## Install phalcon/devtools
+
+`docker-phalcon-install-devtools` is a script to install latest release of Phalcon Devtools CLI.
 
 Here is usage example:
 
-    $ docker run -it --rm mileschou/phalcon sh -c 'docker-phalcon-install-devtools; phalcon'
-
-    Phalcon DevTools (3.2.13)
-
-    Available commands:
-      info             (alias of: i)
-      commands         (alias of: list, enumerate)
-      controller       (alias of: create-controller)
-      module           (alias of: create-module)
-      model            (alias of: create-model)
-      all-models       (alias of: create-all-models)
-      project          (alias of: create-project)
-      scaffold         (alias of: create-scaffold)
-      migration        (alias of: create-migration)
-      webtools         (alias of: create-webtools)
-      serve            (alias of: server)
-      console          (alias of: shell, psysh)
+    $ docker run -it --rm mileschou/phalcon docker-phalcon-install-devtools
+    >>> Downloading phalcon.phar ...
+    >>> Testing 'phalcon --version' command ...
+    
+    Phalcon DevTools (4.0.0)
+    
+    Environment:
+      OS: Linux 4e17aa4d915d 4.9.184-linuxkit #1 SMP Tue Jul 2 22:58:16 UTC 2019 x86_64
+      PHP Version: 7.4.1
+      PHP SAPI: cli
+      PHP Bin: /usr/local/bin/php
+      PHP Extension Dir: /usr/local/lib/php/extensions/no-debug-non-zts-20190902
+      PHP Bin Dir: /usr/local/bin
+      Loaded PHP config: 
+    Versions:
+      Phalcon DevTools Version: 4.0.0
+      Phalcon Version: 4.0.0
+      AdminLTE Version: 2.3.6
 
 ## Build yourself
 
