@@ -6,7 +6,12 @@ branches:
   - master
 
 env:
-  - VERSION=7.3 VARIANT= EXTRA_TAG=latest CLI_TAG=7.2-cli
+  - VERSION=7.4 VARIANT= EXTRA_TAG=latest CLI_TAG=7.4-cli
+  - VERSION=7.4 VARIANT=alpine EXTRA_TAG=alpine
+  - VERSION=7.4 VARIANT=apache EXTRA_TAG=apache
+  - VERSION=7.4 VARIANT=fpm EXTRA_TAG=fpm
+  - VERSION=7.4 VARIANT=fpm-alpine EXTRA_TAG=fpm-alpine
+  - VERSION=7.3 VARIANT= CLI_TAG=7.3-cli
   - VERSION=7.3 VARIANT=alpine EXTRA_TAG=alpine
   - VERSION=7.3 VARIANT=apache EXTRA_TAG=apache
   - VERSION=7.3 VARIANT=fpm EXTRA_TAG=fpm

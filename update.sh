@@ -16,6 +16,7 @@ PHALCON_VERSION=4.0.0
 VERSIONS="
 7.2
 7.3
+7.4
 "
 
 for version in ${VERSIONS}; do

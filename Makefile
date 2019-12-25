@@ -10,7 +10,14 @@ DEVTOOLS_VERSION := 4.0.0
 
 all: build
 
-build: build7.3 build7.2
+build: build7.4 build7.3 build7.2
+
+build7.4:
+	docker build -t=$(IMAGE):7.4 -f 7.4/Dockerfile .
+	docker build -t=$(IMAGE):7.4-alpine -f 7.4/alpine/Dockerfile .
+	docker build -t=$(IMAGE):7.4-apache -f 7.4/apache/Dockerfile .
+	docker build -t=$(IMAGE):7.4-fpm -f 7.4/fpm/Dockerfile .
+	docker build -t=$(IMAGE):7.4-fpm-alpine -f 7.4/fpm-alpine/Dockerfile .
 
 build7.3:
 	docker build -t=$(IMAGE):7.3 -f 7.3/Dockerfile .
