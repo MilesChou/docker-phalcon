@@ -45,20 +45,6 @@ push:
 	docker push $(IMAGE):7.2-fpm
 	docker push $(IMAGE):7.2-fpm-alpine
 
-update:
-	@echo Update Phalcon version to $(VERSION) ...
-	find */**/Dockerfile */Dockerfile -exec sed -i 's/^ARG PHALCON_VERSION=.*/ARG PHALCON_VERSION=$(VERSION)/g' {} +;
-	@sed -i 's/^VERSION := .*/VERSION := $(VERSION)/g' Makefile
-	@# shields
-	@sed -i 's/Phalcon-[^-]*/Phalcon-$(VERSION)/g' README.md
-	@# readme test version
-	@sed -i 's/Version => .*/Version => $(VERSION)/g' README.md
-	@echo Update Phalcon-devtools version to $(DEVTOOLS_VERSION) ...
-	@find docker-phalcon-install-devtools -exec sed -i 's/^INSTALL_VERSION=.*/INSTALL_VERSION=$(DEVTOOLS_VERSION)/g' {} +;
-	@sed -i 's/^DEVTOOLS_VERSION := .*/DEVTOOLS_VERSION := $(DEVTOOLS_VERSION)/g' Makefile
-	@# shields
-	@sed -i 's/phalcon--devtools-[^-]*/phalcon--devtools-$(DEVTOOLS_VERSION)/g' README.md
-
 variants: php
 	@find php -name "Dockerfile" | sed 's/php\/\(.*\)\/Dockerfile/\1/'
 

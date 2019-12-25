@@ -10,6 +10,28 @@ generated_warning() {
 	EOH
 }
 
+generate_dockerfile() {
+    variants=$1
+
+    if [[ "$variants" != "" ]]; then
+        path=/$1
+        version_suffix=-${variants}
+    else
+        path=""
+        version_suffix=""
+    fi
+
+    # Prepare directories
+    mkdir -p ${version}${path}
+
+    generated_warning > ${version}${path}/Dockerfile
+
+    cat Dockerfile.template | \
+        sed -e 's!%%PHP_VERSION%%!'"${version}${version_suffix}"'!' | \
+        sed -e 's!%%PHALCON_VERSION%%!'"${PHALCON_VERSION}"'!' \
+        >> ${version}${path}/Dockerfile
+}
+
 PHALCON_VERSION=4.0.0
 
 # Dockerfile on PHP 5 is customized
@@ -22,12 +44,9 @@ VERSIONS="
 for version in ${VERSIONS}; do
     major_version=$(echo ${version} | cut -f1 -d.)
 
-    mkdir -p ${version}
-
-    generated_warning > ${version}/Dockerfile
-
-    cat Dockerfile.template | \
-        sed -e 's!%%PHP_VERSION%%!'"${version}"'!' | \
-        sed -e 's!%%PHALCON_VERSION%%!'"${PHALCON_VERSION}"'!' \
-        >> ${version}/Dockerfile
+    generate_dockerfile
+    generate_dockerfile alpine
+    generate_dockerfile apache
+    generate_dockerfile fpm
+    generate_dockerfile fpm-alpine
 done

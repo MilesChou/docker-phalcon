@@ -71,9 +71,9 @@ Recommend 2G+ RAM when build image yourself. Maybe wait a long time for compile 
 
 ## Memo
 
-Update:
+Update Phalcon version:
 
-    make VERSION=X.X.X DEVTOOLS_VERSION=Y.Y.Y update
+    ./update.sh
 
 List the variants of Docker official PHP:
 
