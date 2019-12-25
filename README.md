@@ -14,9 +14,7 @@ The [Phalcon Action](https://github.com/marketplace/actions/phalcon-action) is U
 
 ## Variants for Phalcon
 
-It's only support PHP 7.2 after [Phalcon 4.0.0 release](https://blog.phalcon.io/post/phalcon-4-0-0-released). We will keep the old Dockerfile and Docker image, but we will not to update old image.
-
-### Supported tags and respective `Dockerfile` links
+It's only support PHP 7.2 after [Phalcon 4.0.0 release](https://blog.phalcon.io/post/phalcon-4-0-0-released). We will keep the old  Docker image, but we will not to update old image.
 
 * [`7.3-cli`, `cli`, `7.3`, `latest` (7.3/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.3/Dockerfile)
 * [`7.3-alpine`, `alpine` (7.3/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.3/alpine/Dockerfile)
@@ -29,28 +27,7 @@ It's only support PHP 7.2 after [Phalcon 4.0.0 release](https://blog.phalcon.io/
 * [`7.2-fpm` (7.2/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/fpm/Dockerfile)
 * [`7.2-fpm-alpine` (7.2/fpm-alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/fpm-alpine/Dockerfile)
 
-### Phalcon 3.x with old PHP version
-
-> The following Docker images will no longer update
-
-* [`7.1-cli`, `7.1` (7.1/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/Dockerfile)
-* [`7.1-alpine` (7.1/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/alpine/Dockerfile)
-* [`7.1-apache` (7.1/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/apache/Dockerfile)
-* [`7.1-fpm` (7.1/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/fpm/Dockerfile)
-* [`7.1-fpm-alpine` (7.1/fpm-alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/fpm-alpine/Dockerfile)
-* [`7.0-cli`, `7.0` (7.0/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.0/Dockerfile)
-* [`7.0-alpine` (7.0/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.0/alpine/Dockerfile)
-* [`7.0-apache` (7.0/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.0/apache/Dockerfile)
-* [`7.0-fpm` (7.0/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.0/fpm/Dockerfile)
-* [`7.0-fpm-alpine` (7.0/fpm-alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.0/fpm-alpine/Dockerfile)
-* [`5.6-cli`, `5.6` (5.6/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/5.6/Dockerfile)
-* [`5.6-alpine` (5.6/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/5.6/alpine/Dockerfile)
-* [`5.6-apache` (5.6/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/5.6/apache/Dockerfile)
-* [`5.6-fpm` (5.6/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/5.6/fpm/Dockerfile)
-* [`5.5-cli`, `5.5` (5.5/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/5.5/Dockerfile)
-* [`5.5-alpine` (5.5/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/5.5/alpine/Dockerfile)
-* [`5.5-apache` (5.5/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/5.5/apache/Dockerfile)
-* [`5.5-fpm` (5.5/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/5.5/fpm/Dockerfile)
+The dockerfile with Phalcon 3.x and old PHP version can find at [phalcon-v3.x branch](https://github.com/MilesChou/docker-phalcon/tree/phalcon-v3.x).
 
 ## Image Test
 
@@ -61,7 +38,7 @@ Here is a simple test command that can confirm the extension has been loaded & c
 
 ## Running a php script
 
-    $ docker run -v ${PWD}:/usr/src/app -w /usr/src/app mileschou/phalcon:7.2-cli php script.php
+    $ docker run -v ${PWD}:/usr/src/app -w /usr/src/app mileschou/phalcon:7.4-cli php script.php
 
 ## Builded Image included simple script `docker-phalcon-install-devtools` to install latest release of Phalcon Devtools CLI
 

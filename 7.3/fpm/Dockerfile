@@ -6,6 +6,9 @@ ARG PHALCON_VERSION=4.0.0
 ARG PHALCON_EXT_PATH=php7/64bits
 
 RUN set -xe && \
+        # Compile PSR, see https://github.com/jbboehr/php-psr
+        pecl install psr && \
+        docker-php-ext-enable psr && \
         # Compile Phalcon
         curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
         tar xzf ${PWD}/v${PHALCON_VERSION}.tar.gz && \
