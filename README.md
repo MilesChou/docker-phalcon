@@ -1,8 +1,8 @@
 # Docker Phalcon
 
-[![Build Status](https://travis-ci.org/MilesChou/docker-phalcon.svg?branch=master)](https://travis-ci.org/MilesChou/docker-phalcon)
-![Phalcon Version](https://img.shields.io/badge/Phalcon-3.4.5-blue.svg)
-![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-3.4.2-blue.svg)
+[![Build Status](https://travis-ci.com/MilesChou/docker-phalcon.svg?branch=master)](https://travis-ci.com/MilesChou/docker-phalcon)
+![Phalcon Version](https://img.shields.io/badge/Phalcon-4.0.0-blue.svg)
+![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-4.0.0-blue.svg)
 [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 
@@ -12,7 +12,11 @@ The repository is a Docker image based on [Docker official PHP image](https://hu
 
 The [Phalcon Action](https://github.com/marketplace/actions/phalcon-action) is Use GitHub Actions with this image.
 
-## Supported tags and respective `Dockerfile` links
+## Variants for Phalcon
+
+It's only support PHP 7.2 after [Phalcon 4.0.0 release](https://blog.phalcon.io/post/phalcon-4-0-0-released). We will keep the old Dockerfile and Docker image, but we will not to update old image.
+
+### Supported tags and respective `Dockerfile` links
 
 * [`7.3-cli`, `cli`, `7.3`, `latest` (7.3/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.3/Dockerfile)
 * [`7.3-alpine`, `alpine` (7.3/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.3/alpine/Dockerfile)
@@ -24,6 +28,11 @@ The [Phalcon Action](https://github.com/marketplace/actions/phalcon-action) is U
 * [`7.2-apache` (7.2/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/apache/Dockerfile)
 * [`7.2-fpm` (7.2/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/fpm/Dockerfile)
 * [`7.2-fpm-alpine` (7.2/fpm-alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/fpm-alpine/Dockerfile)
+
+### Phalcon 3.x with old PHP version
+
+> The following Docker images will no longer update
+
 * [`7.1-cli`, `7.1` (7.1/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/Dockerfile)
 * [`7.1-alpine` (7.1/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/alpine/Dockerfile)
 * [`7.1-apache` (7.1/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.1/apache/Dockerfile)
@@ -48,7 +57,7 @@ The [Phalcon Action](https://github.com/marketplace/actions/phalcon-action) is U
 Here is a simple test command that can confirm the extension has been loaded & check version.
 
     $ docker run --rm mileschou/phalcon:alpine php --ri phalcon | grep -i ^version
-    Version => 3.4.5
+    Version => 4.0.0
 
 ## Running a php script
 

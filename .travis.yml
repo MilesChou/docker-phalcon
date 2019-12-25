@@ -16,24 +16,6 @@ env:
   - VERSION=7.2 VARIANT=apache
   - VERSION=7.2 VARIANT=fpm
   - VERSION=7.2 VARIANT=fpm-alpine
-  - VERSION=7.1 VARIANT= CLI_TAG=7.1-cli
-  - VERSION=7.1 VARIANT=alpine
-  - VERSION=7.1 VARIANT=apache
-  - VERSION=7.1 VARIANT=fpm
-  - VERSION=7.1 VARIANT=fpm-alpine
-  - VERSION=7.0 VARIANT= CLI_TAG=7.0-cli
-  - VERSION=7.0 VARIANT=alpine
-  - VERSION=7.0 VARIANT=apache
-  - VERSION=7.0 VARIANT=fpm
-  - VERSION=7.0 VARIANT=fpm-alpine
-  - VERSION=5.6 VARIANT= CLI_TAG=5.6-cli
-  - VERSION=5.6 VARIANT=alpine
-  - VERSION=5.6 VARIANT=apache
-  - VERSION=5.6 VARIANT=fpm
-  - VERSION=5.5 VARIANT= CLI_TAG=5.5-cli
-  - VERSION=5.5 VARIANT=alpine
-  - VERSION=5.5 VARIANT=apache
-  - VERSION=5.5 VARIANT=fpm
 
 before_script:
   - IMAGE="mileschou/phalcon"

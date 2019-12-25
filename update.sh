@@ -10,12 +10,10 @@ generated_warning() {
 	EOH
 }
 
-PHALCON_VERSION=3.4.5
+PHALCON_VERSION=4.0.0
 
 # Dockerfile on PHP 5 is customized
 VERSIONS="
-7.0
-7.1
 7.2
 7.3
 "
