@@ -13,7 +13,7 @@ The [Phalcon Action](https://github.com/marketplace/actions/phalcon-action) is U
 
 ## Variants for Phalcon
 
-It's only support PHP 7.2 after [Phalcon 4.0.0 release](https://blog.phalcon.io/post/phalcon-4-0-0-released). We will keep the old  Docker image, but we will not to update old image.
+It's only support PHP 7.2 since [Phalcon 4.0.0 release](https://blog.phalcon.io/post/phalcon-4-0-0-released). We will keep the old  Docker image, but we will not to update old image.
 
 * [`7.4-cli`, `cli`, `7.4`, `latest` (7.4/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/Dockerfile)
 * [`7.4-alpine`, `alpine` (7.4/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/alpine/Dockerfile)
