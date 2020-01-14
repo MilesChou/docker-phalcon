@@ -3,7 +3,7 @@ set -e
 
 INSTALL_VERSION=4.0.0
 
-if [[ "$1" != "" ]]; then
+if [ "$1" != "" ]; then
     INSTALL_VERSION=$1
 fi
 

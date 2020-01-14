@@ -28,11 +28,13 @@ generate_dockerfile() {
 
     cat Dockerfile.template | \
         sed -e 's!%%PHP_VERSION%%!'"${version}${version_suffix}"'!' | \
+        sed -e 's!%%PSR_VERSION%%!'"${PSR_VERSION}"'!' | \
         sed -e 's!%%PHALCON_VERSION%%!'"${PHALCON_VERSION}"'!' \
         >> ${version}${path}/Dockerfile
 }
 
-PHALCON_VERSION=4.0.0
+PSR_VERSION=0.7.0
+PHALCON_VERSION=4.0.2
 
 # Dockerfile on PHP 5 is customized
 VERSIONS="
