@@ -7,8 +7,8 @@ FROM php:7.2-fpm
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
-ARG PSR_VERSION=0.7.0
-ARG PHALCON_VERSION=4.0.2
+ARG PSR_VERSION=1.0.0
+ARG PHALCON_VERSION=4.0.5
 ARG PHALCON_EXT_PATH=php7/64bits
 
 RUN set -xe && \
