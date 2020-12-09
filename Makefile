@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 IMAGE := mileschou/phalcon
-VERSION := 4.0.0
-DEVTOOLS_VERSION := 4.0.0
+VERSION := 4.1.0
+DEVTOOLS_VERSION := 4.0.3
 
 .PHONY: all build push update variants clean
 .PHONY: build7.4 build7.3 build7.2

@@ -7,8 +7,8 @@ FROM php:7.4-alpine
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
-ARG PSR_VERSION=1.0.0
-ARG PHALCON_VERSION=4.0.5
+ARG PSR_VERSION=1.0.1
+ARG PHALCON_VERSION=4.1.0
 ARG PHALCON_EXT_PATH=php7/64bits
 
 RUN set -xe && \

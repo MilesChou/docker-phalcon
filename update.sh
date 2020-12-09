@@ -33,8 +33,8 @@ generate_dockerfile() {
         >> ${version}${path}/Dockerfile
 }
 
-PSR_VERSION=1.0.0
-PHALCON_VERSION=4.0.5
+PSR_VERSION=1.0.1
+PHALCON_VERSION=4.1.0
 
 # Dockerfile on PHP 7 is customized
 VERSIONS="
