@@ -3,7 +3,7 @@ FROM php:8.0-alpine
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
 ARG PHALCON_VERSION=5.0.0alpha3
-ARG PHALCON_EXT_PATH=phalcon/64bits
+ARG PHALCON_EXT_PATH=phalcon/safe
 
 RUN set -xe && \
         apk add --no-cache --virtual .build-deps \
@@ -14,6 +14,7 @@ RUN set -xe && \
         # Install ext-psr
         pecl install psr && \
         docker-php-ext-enable psr && \
+        php -m && \
         # Install ext-phalcon
         curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
         tar xzf ${PWD}/v${PHALCON_VERSION}.tar.gz && \

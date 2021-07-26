@@ -1,31 +1,23 @@
-#
-# NOTE: THIS DOCKERFILE IS GENERATED VIA "update.sh"
-#
-# PLEASE DO NOT EDIT IT DIRECTLY.
-#
 FROM php:8.0
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
-ARG PSR_VERSION=1.1.0
 ARG PHALCON_VERSION=5.0.0alpha3
-ARG PHALCON_EXT_PATH=phalcon/64bits
+ARG PHALCON_EXT_PATH=phalcon/safe
 
 RUN set -xe && \
-        # Download PSR, see https://github.com/jbboehr/php-psr
-        curl -LO https://github.com/jbboehr/php-psr/archive/v${PSR_VERSION}.tar.gz && \
-        tar xzf ${PWD}/v${PSR_VERSION}.tar.gz && \
-        # Download Phalcon
+        # Install ext-psr
+        pecl install psr && \
+        docker-php-ext-enable psr && \
+        php -m && \
+        # Install ext-phalcon
         curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
         tar xzf ${PWD}/v${PHALCON_VERSION}.tar.gz && \
         docker-php-ext-install -j $(getconf _NPROCESSORS_ONLN) \
-            ${PWD}/php-psr-${PSR_VERSION} \
             ${PWD}/cphalcon-${PHALCON_VERSION}/build/${PHALCON_EXT_PATH} \
         && \
         # Remove all temp files
         rm -r \
-            ${PWD}/v${PSR_VERSION}.tar.gz \
-            ${PWD}/php-psr-${PSR_VERSION} \
             ${PWD}/v${PHALCON_VERSION}.tar.gz \
             ${PWD}/cphalcon-${PHALCON_VERSION} \
         && \
