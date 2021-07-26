@@ -12,11 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build on 8.0/Dockerfile
-        run: docker build --progress=plain 8.0
+        run: docker build --progress=plain --file 8.0/Dockerfile .
 
   php80_alpine_v5:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Build on 8.0/alpine/Dockerfile
-        run: docker build --progress=plain 8.0/alpine
+        run: docker build --progress=plain --file 8.0/alpine/Dockerfile .
