@@ -1,7 +1,7 @@
 # Docker Phalcon
 
-![Phalcon Version](https://img.shields.io/badge/Phalcon-4.1.0-blue.svg)
-![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-4.0.3-blue.svg)
+![Phalcon Version](https://img.shields.io/badge/Phalcon-4.1.2-blue.svg)
+![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-4.1.1-blue.svg)
 [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 
