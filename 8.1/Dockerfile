@@ -1,11 +1,11 @@
-FROM php:8.0
+FROM php:8.1
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
 ARG PHALCON_VERSION=5.0.0RC2
-ARG PHALCON_EXT_PATH=phalcon/safe
 
 RUN set -xe && \
+        docker-php-source extract && \
         # Install ext-psr
         pecl install psr && \
         docker-php-ext-enable psr && \
@@ -20,8 +20,8 @@ RUN set -xe && \
         && \
         # Remove all temp files
         rm -r \
-            ${PWD}/v${PHALCON_VERSION}.tar.gz \
-            ${PWD}/cphalcon-${PHALCON_VERSION} \
+            /v${PHALCON_VERSION}.tar.gz \
+            /cphalcon-${PHALCON_VERSION} \
         && \
         php -m
 

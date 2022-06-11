@@ -4,13 +4,21 @@ VERSION := 4.1.0
 DEVTOOLS_VERSION := 4.0.3
 
 .PHONY: all build push update variants clean
-.PHONY: build7.4 build7.3 build7.2
+.PHONY: 8.1 8.0 build7.4 build7.3 build7.2
 
 # ------------------------------------------------------------------------------
 
 all: build
 
 build: build7.4 build7.3 build7.2
+
+8.1:
+	docker build -t=$(IMAGE):8.1 -f 8.1/Dockerfile .
+	docker build -t=$(IMAGE):8.1-alpine -f 8.1/alpine/Dockerfile .
+
+8.0:
+	docker build -t=$(IMAGE):8.0 -f 8.0/Dockerfile .
+	docker build -t=$(IMAGE):8.0-alpine -f 8.0/alpine/Dockerfile .
 
 build7.4:
 	docker build -t=$(IMAGE):7.4 -f 7.4/Dockerfile .
