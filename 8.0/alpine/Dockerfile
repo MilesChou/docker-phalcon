@@ -6,6 +6,7 @@ ARG PHALCON_VERSION=5.0.0RC2
 ARG PHALCON_EXT_PATH=phalcon/safe
 
 RUN set -xe && \
+        docker-php-source extract && \
         apk add --no-cache --virtual .build-deps \
             autoconf \
             g++ \
@@ -22,6 +23,7 @@ RUN set -xe && \
             /v${PHALCON_VERSION}.tar.gz \
             /cphalcon-${PHALCON_VERSION} \
         && \
+        docker-php-source delete && \
         apk del .build-deps && \
         php -m
 

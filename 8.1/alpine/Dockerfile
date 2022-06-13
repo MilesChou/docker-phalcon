@@ -10,6 +10,7 @@ RUN set -xe && \
             g++ \
             make \
         && \
+        docker-php-source extract && \
         # Install ext-phalcon
         curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
         tar xzf ${PWD}/v${PHALCON_VERSION}.tar.gz && \
@@ -21,6 +22,7 @@ RUN set -xe && \
             ${PWD}/v${PHALCON_VERSION}.tar.gz \
             ${PWD}/cphalcon-${PHALCON_VERSION} \
         && \
+        docker-php-source delete && \
         apk del .build-deps && \
         php -m
 
