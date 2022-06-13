@@ -6,12 +6,6 @@ ARG PHALCON_VERSION=5.0.0RC2
 ARG PHALCON_EXT_PATH=phalcon/safe
 
 RUN set -xe && \
-        # Install ext-psr
-        pecl install psr && \
-        docker-php-ext-enable psr && \
-        # Load PSR extension first, See https://docs.phalcon.io/4.0/en/installation#psr
-        mv /usr/local/etc/php/conf.d/docker-php-ext-psr.ini /usr/local/etc/php/conf.d/10-docker-php-ext-psr.ini && \
-        php -m && \
         # Install ext-phalcon
         curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
         tar xzf /v${PHALCON_VERSION}.tar.gz && \
