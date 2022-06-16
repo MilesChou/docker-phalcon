@@ -1,0 +1,36 @@
+name: Test Dockerfile
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  php80_debian_v5:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build on 8.0/Dockerfile
+        run: docker build --progress=plain --file 8.0/Dockerfile .
+
+  php80_alpine_v5:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build on 8.0/alpine/Dockerfile
+        run: docker build --progress=plain --file 8.0/alpine/Dockerfile .
+
+  php81_debian_v5:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build on 8.1/Dockerfile
+        run: docker build --progress=plain --file 8.1/Dockerfile .
+
+  php81_alpine_v5:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build on 8.1/alpine/Dockerfile
+        run: docker build --progress=plain --file 8.1/alpine/Dockerfile .
