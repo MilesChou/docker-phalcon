@@ -2,7 +2,7 @@ FROM php:8.1
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
-ARG PHALCON_VERSION=5.0.0RC2
+ARG PHALCON_VERSION=5.0.4
 
 RUN set -xe && \
         docker-php-source extract && \

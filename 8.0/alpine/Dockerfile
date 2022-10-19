@@ -2,8 +2,7 @@ FROM php:8.0-alpine
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
-ARG PHALCON_VERSION=5.0.0RC2
-ARG PHALCON_EXT_PATH=phalcon/safe
+ARG PHALCON_VERSION=5.0.4
 
 RUN set -xe && \
         docker-php-source extract && \

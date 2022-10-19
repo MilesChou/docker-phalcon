@@ -2,8 +2,7 @@ FROM php:8.0
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
-ARG PHALCON_VERSION=5.0.0RC2
-ARG PHALCON_EXT_PATH=phalcon/safe
+ARG PHALCON_VERSION=5.0.4
 
 RUN set -xe && \
         docker-php-source extract && \
@@ -15,8 +14,8 @@ RUN set -xe && \
         && \
         # Remove all temp files
         rm -r \
-            ${PWD}/v${PHALCON_VERSION}.tar.gz \
-            ${PWD}/cphalcon-${PHALCON_VERSION} \
+            /v${PHALCON_VERSION}.tar.gz \
+            /cphalcon-${PHALCON_VERSION} \
         && \
         docker-php-source delete && \
         php -m
