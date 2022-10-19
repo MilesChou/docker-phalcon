@@ -1,11 +1,11 @@
 # Docker Phalcon
 
-![Phalcon Version](https://img.shields.io/badge/Phalcon-4.1.2-blue.svg)
-![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-4.1.1-blue.svg)
+![Phalcon Version](https://img.shields.io/badge/Phalcon-5.0.4-blue.svg)
+![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-4.2.0-blue.svg)
 [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 
-Docker Phalcon base image, see [DockerHub](https://hub.docker.com/r/mileschou/phalcon/)
+Docker Phalcon base image, see [DockerHub](https://hub.docker.com/r/mileschou/phalcon/).
 
 The repository is a Docker image based on [Docker official PHP image](https://hub.docker.com/_/php/) with [Phalcon Framework](https://phalcon.io/).
 
@@ -13,25 +13,22 @@ The [Phalcon Action](https://github.com/marketplace/actions/phalcon-action) is U
 
 ## Variants for Phalcon
 
-It's only support PHP 7.2 since [Phalcon 4.0.0 release](https://blog.phalcon.io/post/phalcon-4-0-0-released). We will keep the old  Docker image, but we will not to update old image.
+It's only support PHP 7.4 since [Phalcon 5.0.0 release](https://blog.phalcon.io/post/phalcon-v5-0-0-and-v5-0-1-released). We will keep the old Docker image, but we will not to update old image.
 
-* [`7.4-cli`, `cli`, `7.4`, `latest` (7.4/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/Dockerfile)
-* [`7.4-alpine`, `alpine` (7.4/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/alpine/Dockerfile)
-* [`7.4-apache`, `apache` (7.4/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/apache/Dockerfile)
-* [`7.4-fpm`, `fpm` (7.4/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/fpm/Dockerfile)
-* [`7.4-fpm-alpine`, `fpm-alpine` (7.4/fpm-alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/fpm-alpine/Dockerfile)
-* [`7.3-cli`, `7.3` (7.3/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.3/Dockerfile)
-* [`7.3-alpine` (7.3/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.3/alpine/Dockerfile)
-* [`7.3-apache` (7.3/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.3/apache/Dockerfile)
-* [`7.3-fpm` (7.3/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.3/fpm/Dockerfile)
-* [`7.3-fpm-alpine` (7.3/fpm-alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.3/fpm-alpine/Dockerfile)
-* [`7.2-cli`, `7.2` (7.2/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/Dockerfile)
-* [`7.2-alpine` (7.2/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/alpine/Dockerfile)
-* [`7.2-apache` (7.2/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/apache/Dockerfile)
-* [`7.2-fpm` (7.2/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/fpm/Dockerfile)
-* [`7.2-fpm-alpine` (7.2/fpm-alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.2/fpm-alpine/Dockerfile)
+* [`8.1-cli`, `8.1` (8.1/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/8.1/Dockerfile)
+* [`8.1-alpine` (8.1/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/8.1/alpine/Dockerfile)
+* [`8.0-cli`, `8.0` (8.0/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/8.0/Dockerfile)
+* [`8.0-alpine` (8.0/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/8.0/alpine/Dockerfile)
+* [`7.4-cli`, `7.4` (7.4/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/Dockerfile)
+* [`7.4-alpine` (7.4/alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/alpine/Dockerfile)
+* [`7.4-apache` (7.4/apache/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/apache/Dockerfile)
+* [`7.4-fpm` (7.4/fpm/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/fpm/Dockerfile)
+* [`7.4-fpm-alpine` (7.4/fpm-alpine/Dockerfile)](https://github.com/MilesChou/docker-phalcon/blob/master/7.4/fpm-alpine/Dockerfile)
 
-The dockerfile with Phalcon 3.x and old PHP version can find at [phalcon-v3.x branch](https://github.com/MilesChou/docker-phalcon/tree/phalcon-v3.x).
+The dockerfile with old Phalcon versions can be found at branchs:
+
+- [phalcon-v4.x branch](https://github.com/MilesChou/docker-phalcon/tree/phalcon-v4.x).
+- [phalcon-v3.x branch](https://github.com/MilesChou/docker-phalcon/tree/phalcon-v3.x).
 
 ## Image Test
 
@@ -74,10 +71,6 @@ Here is usage example:
 Recommend 2G+ RAM when build image yourself. Maybe wait a long time for compile if only 1G RAM.
 
 ## Memo
-
-Update Phalcon version:
-
-    ./update.sh
 
 List the variants of Docker official PHP:
 
