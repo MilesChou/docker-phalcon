@@ -10,16 +10,13 @@ RUN set -xe && \
         docker-php-source extract && \
         # Install ext-phalcon
         cd /tmp && \
-        curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
-        tar xzf v${PHALCON_VERSION}.tar.gz && \
+        curl -LO https://github.com/phalcon/cphalcon/releases/download/v${PHALCON_VERSION}/phalcon-pecl.tgz && \
+        tar xzf phalcon-pecl.tgz && \
         docker-php-ext-install -j $(getconf _NPROCESSORS_ONLN) \
-            /tmp/cphalcon-${PHALCON_VERSION}/build/phalcon \
+            /tmp/phalcon-${PHALCON_VERSION} \
         && \
         # Remove all temp files
-        rm -r \
-            /tmp/v${PHALCON_VERSION}.tar.gz \
-            /tmp/cphalcon-${PHALCON_VERSION} \
-        && \
+        rm -r /tmp/phalcon-* && \
         docker-php-source delete && \
         php -m
 

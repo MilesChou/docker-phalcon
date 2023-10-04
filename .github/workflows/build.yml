@@ -1,4 +1,4 @@
-name: docker-phalcon builder
+name: ci
 
 on:
   pull_request:
@@ -14,13 +14,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
+      max-parallel: 8
+      fail-fast: true
       matrix:
         php:
-          - 7.4
-          - "8.0"
-          - 8.1
           - 8.2
+          - 8.1
+          - "8.0"
+          - 7.4
         variant:
           - "" # cli
           - -fpm

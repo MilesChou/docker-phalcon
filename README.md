@@ -4,6 +4,7 @@
 ![Phalcon devtools](https://img.shields.io/badge/phalcon--devtools-4.2.0-blue.svg)
 [![](https://img.shields.io/docker/stars/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
 [![](https://img.shields.io/docker/pulls/mileschou/phalcon.svg)](https://hub.docker.com/r/mileschou/phalcon/)
+[![ci](https://github.com/fizzka/docker-phalcon/actions/workflows/build.yml/badge.svg)](https://github.com/fizzka/docker-phalcon/actions/workflows/build.yml)
 
 Docker Phalcon base image, see [DockerHub](https://hub.docker.com/r/mileschou/phalcon/).
 
