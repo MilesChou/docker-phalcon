@@ -6,31 +6,59 @@ on:
     branches:
       - master
 
+env:
+  IMAGE_TAG: testing
+
 jobs:
-  php80_debian_v5:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Build on 8.0/Dockerfile
-        run: docker build --progress=plain --file 8.0/Dockerfile .
+    strategy:
+      fail-fast: false
+      matrix:
+        php:
+          # - 8.0
+          - 8.1
+          # - 8.2
+        os:
+          # - ""
+          - alpine
+        variant:
+          - "" # cli
+          # - fpm
 
-  php80_alpine_v5:
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Build on 8.0/alpine/Dockerfile
-        run: docker build --progress=plain --file 8.0/alpine/Dockerfile .
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        # env:
+        #   IMAGE_TAG: ${{ matrix.php }}-${{ matrix.os }}
+      -
+        name: Build
+        uses: docker/build-push-action@v5
+        with:
+          load: true
+          context: "{{ defaultContext }}:${{ matrix.php }}/${{ matrix.os }}"
+          # platforms: linux/amd64,linux/arm64
+          tags: fizzka/docker-phalcon:${{ env.IMAGE_TAG }}
+      -
+        name: Test
+        run: docker run --rm fizzka/docker-phalcon:${{ env.IMAGE_TAG }} sh -c "php --ri phalcon | grep -i ^version"
 
-  php81_debian_v5:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Build on 8.1/Dockerfile
-        run: docker build --progress=plain --file 8.1/Dockerfile .
+      -
+        name: Login
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-  php81_alpine_v5:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Build on 8.1/alpine/Dockerfile
-        run: docker build --progress=plain --file 8.1/alpine/Dockerfile .
+      - name: Build and push
+        if: github.event_name != 'pull_request'
+        uses: docker/build-push-action@v5
+        env:
+          IMAGE_TAG: ${{ matrix.php }}-${{ matrix.os }}"
+        with:
+          push: true
+          context: "{{ defaultContext }}:${{ matrix.php }}/${{ matrix.os }}"
+          # platforms: linux/amd64,linux/arm64
+          tags: fizzka/docker-phalcon:${{ env.IMAGE_TAG }}
