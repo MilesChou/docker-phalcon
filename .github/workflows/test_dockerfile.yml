@@ -42,7 +42,7 @@ jobs:
           tags: fizzka/docker-phalcon:${{ env.IMAGE_TAG }}
       -
         name: Test
-        run: docker run --rm fizzka/docker-phalcon:${{ env.IMAGE_TAG }} sh -c "php --ri phalcon | grep -i ^version"
+        run: docker run --rm fizzka/docker-phalcon:${{ env.IMAGE_TAG }} sh -c "php -v; php --ri phalcon | grep -i ^version"
 
       -
         name: Login
@@ -56,7 +56,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/build-push-action@v5
         env:
-          IMAGE_TAG: ${{ matrix.php }}-${{ matrix.os }}"
+          IMAGE_TAG: ${{ matrix.php }}-${{ matrix.os }}
         with:
           push: true
           context: "{{ defaultContext }}:${{ matrix.php }}/${{ matrix.os }}"
