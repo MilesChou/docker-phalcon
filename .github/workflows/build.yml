@@ -8,6 +8,7 @@ on:
 
 env:
   IMAGE_NAME: fizzka/docker-phalcon
+  PHALCON_VERSION: 5.3.1
 
 jobs:
   build:
@@ -39,8 +40,9 @@ jobs:
         with:
           load: true
           file: Dockerfile${{ matrix.os }}
-          build-args:
+          build-args: |
             PHP_VARIANT=${{ env.PHP_VARIANT }}
+            PHALCON_VERSION=${{ env.PHALCON_VERSION }}
           tags: ${{ env.IMAGE_NAME }}:${{ env.PHP_VARIANT }}-tesing
       -
         name: Test
@@ -60,5 +62,8 @@ jobs:
         with:
           push: true
           file: Dockerfile${{ matrix.os }}
+          build-args: |
+            PHP_VARIANT=${{ env.PHP_VARIANT }}
+            PHALCON_VERSION=${{ env.PHALCON_VERSION }}
           platforms: linux/amd64,linux/arm64
           tags: ${{ env.IMAGE_NAME }}:${{ env.PHP_VARIANT }}
