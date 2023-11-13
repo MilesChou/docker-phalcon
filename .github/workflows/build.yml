@@ -7,7 +7,7 @@ on:
       - master
 
 env:
-  IMAGE_NAME: fizzka/docker-phalcon
+  IMAGE_NAME: mileschou/phalcon
   PHALCON_VERSION: 5.3.1
 
 jobs:
