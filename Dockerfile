@@ -1,4 +1,6 @@
-FROM php:8.0
+ARG PHP_VARIANT=8.2
+
+FROM php:${PHP_VARIANT}
 
 LABEL maintainer="MilesChou <github.com/MilesChou>, fizzka <github.com/fizzka>"
 
@@ -7,16 +9,14 @@ ARG PHALCON_VERSION=5.0.4
 RUN set -xe && \
         docker-php-source extract && \
         # Install ext-phalcon
-        curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
-        tar xzf /v${PHALCON_VERSION}.tar.gz && \
+        cd /tmp && \
+        curl -LO https://github.com/phalcon/cphalcon/releases/download/v${PHALCON_VERSION}/phalcon-pecl.tgz && \
+        tar xzf phalcon-pecl.tgz && \
         docker-php-ext-install -j $(getconf _NPROCESSORS_ONLN) \
-            /cphalcon-${PHALCON_VERSION}/build/phalcon \
+            /tmp/phalcon-${PHALCON_VERSION} \
         && \
         # Remove all temp files
-        rm -r \
-            /v${PHALCON_VERSION}.tar.gz \
-            /cphalcon-${PHALCON_VERSION} \
-        && \
+        rm -r /tmp/phalcon-* && \
         docker-php-source delete && \
         php -m
 
